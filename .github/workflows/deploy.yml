@@ -24,6 +24,7 @@ jobs:
 
   create-release: # Job to create a new github release and upload the generated apk
     name: 🎉 Create Release
+    needs: [ generate-apk ]
     runs-on: ubuntu-latest
     steps:
 
