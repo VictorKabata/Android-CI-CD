@@ -29,11 +29,8 @@ jobs:
     steps:
 
       - name: Create release
-        uses: underwindfall/create-release-with-debugapk@v2.0.0
+        uses: ShaunLWM/action-release-debugapk@master
         env:
           GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }} # Environment secret -GitHub Token
-        with:
-          tag_name: v1.0.0 # Version/Tag name of the release
-          asset_path: app/build/outputs/apk/debug/app-debug.apk
-          asset_name: Android-CI-CD.apk # Name of the apk file to be generated
-          asset_content_type: application/zip
+          APP_FOLDER: app/build/outputs/apk/debug
+          RELEASE_TITLE: Test Release
