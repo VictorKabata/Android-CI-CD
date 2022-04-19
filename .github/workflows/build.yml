@@ -2,7 +2,7 @@ name: Build # name of the workflow
 
 on:
   push: # specifies events to trigger the workflow
-    branches: [ feature ] # branches that trigger the workflow
+    branches: [ develop ] # branches that trigger the workflow
 
 jobs: # groups the jobs to be executed in this workflow
 
