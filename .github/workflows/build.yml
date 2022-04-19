@@ -11,6 +11,7 @@ jobs: # groups the jobs to be executed in this workflow
     runs-on: ubuntu-latest # the job will be executed on ubuntu runner. Other include: Microsoft Windows & MacOS runners
     steps: # groups together all the steps that run in build job
 
+      # Checks out code from the VCS to the runner
       - name: Checkout code # [optional] specifies the name of the step
         uses: actions/checkout@v2 # specifies which action and version to execute ie. checkout@v2
 
@@ -20,10 +21,29 @@ jobs: # groups the jobs to be executed in this workflow
         with:
           java-version: '11'
 
-#      #Allow permissions to make gradle executable
-      - name: Make gradlew executable
+      # Allow permissions to make gradle executable
+      - name: Make gradle executable
         run: chmod +x ./gradlew
 
+      # Execute gradle build command with stacktrace flag
       - name: Build with gradle
         run: ./gradlew build --stacktrace
+
+
+  lint: # defines another job called lint
+    name: 🔍 Lint
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Lint check
+        run: ./gradlew lint
+
+      - name: Generate lint report
+        uses: actions/upload-artifact@v2
+        with:
+          name: lint_report.html
+          path: app/build/reports/lint-results-debug.html
 
