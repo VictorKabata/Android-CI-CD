@@ -15,4 +15,12 @@ class ExampleUnitTest {
 
         assertEquals(result, operation)
     }
+
+    @Test
+    fun subtraction_isCorrect() {
+        val operation = 4 - 2
+        val result = 2
+
+        assertEquals(result, operation)
+    }
 }
