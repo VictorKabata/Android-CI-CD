@@ -1,7 +1,7 @@
 name: Build # name of the workflow
 
 on:
-  pull_request: # specifies events to trigger the workflow
+  push: # specifies events to trigger the workflow
     branches: [ feature ] # branches that trigger the workflow
 
 jobs: # groups the jobs to be executed in this workflow
