@@ -20,7 +20,7 @@ jobs:
           java-version: '11'
 
       - name: Build debug apk
-        run: ./gradlew clean assembleDebug --stacktrace
+        run: ./gradlew assembleDebug --stacktrace
 
   create-release: # Job to create a new github release and upload the generated apk
     name: 🎉 Create Release
