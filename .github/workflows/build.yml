@@ -2,7 +2,7 @@ name: Build # name of the workflow
 
 on:
   push: # specifies events to trigger the workflow
-    branches: [ feature ] # branches that trigger the workflow
+    branches: [ branch name ] # branches that trigger the workflow- SPECIFY YOUR BRANCH NAME
 
 jobs: # groups the jobs to be executed in this workflow
 
@@ -130,13 +130,18 @@ jobs: # groups the jobs to be executed in this workflow
       - name: Checkout Code
         uses: actions/checkout@v1
 
-  #      - name: Upload Artifact to Firebase App Distribution
-  #        uses: wzieba/Firebase-Distribution-Github-Action@v1.2.2
-  #        with:
-  #          appId: ${{secrets.FIREBASE_APP_ID}}
-  #          token: ${{secrets.FIREBASE_TOKEN}}
-  #          groups: testers
-  #          file: Android-CI-CD/app-debug.apk
+      - name: Download APK from build
+        uses: actions/download-artifact@v1
+        with:
+          name: Android-CI-CD
+
+      - name: Upload Artifact to Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1.2.2
+        with:
+          appId: ${{secrets.FIREBASE_APP_ID}}
+          token: ${{secrets.FIREBASE_TOKEN}}
+          groups: testers
+          file: Android-CI-CD/app-debug.apk
 
   playstore-deploy:
     name: 🚀 Deploy to Play Store
