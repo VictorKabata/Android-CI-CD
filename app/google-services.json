@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "796434174049",
+    "project_id": "android-ci-cd-bc93a",
+    "storage_bucket": "android-ci-cd-bc93a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:796434174049:android:9751685a1c8f9d73ef5a20",
+        "android_client_info": {
+          "package_name": "com.vickikbt.androidci_cd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "796434174049-sipk4l33moqqpgr3p6v58n5c3v0bob8d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5eRrN3Jy0D-y8Z-kltPP3MPOAnycy7IA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "796434174049-sipk4l33moqqpgr3p6v58n5c3v0bob8d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
